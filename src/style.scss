@@ -110,6 +110,12 @@ body {
     min-height: 193px;
 }
 
+@media (min-width: 640px) {
+    .head {
+        min-height: 386px;
+    }
+}
+
 .top-slider {
     background: rgba(33, 33, 33, 0.5);
     &__item{
@@ -126,6 +132,21 @@ body {
         padding: 36px 0 28px;
         max-width: 243px;
         margin: 0 auto;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 8px;
+            width: 61px;
+            margin: 0 auto;
+            background-color: $text-color;
+        }
+    }
+    &__btn {
+        display: none;
     }
     .slick-dots {
         position: absolute;
@@ -151,4 +172,28 @@ body {
             margin: 0 10px;
         }
     }
+}
+@media (min-width: 640px) {
+    .top-slider {
+        &__item {
+            min-height: 386px;
+        }
+        &__title {
+            font-size: 60px;
+            line-height: 60px;
+            padding: 50px 0 15px;
+            margin: 0 auto 30px;
+            min-width: 522px;
+        }
+        &__btn {
+            display: block;
+            margin: 0 a 113px;
+            font-size: 18px;
+            background-color: $accent;
+            color: $bg-color;
+            padding: 16px 45px;
+            border: none;
+            border-radius: 3px;
+        }
+    } 
 }
