@@ -347,7 +347,9 @@
         &:hover {
             .services__item-text,
             .services__item-link {
-                display: block;
+                opacity: 1;
+                height: auto;
+                overflow: visible;
             }
             .services__item-img {
                 margin-bottom: 14px;
@@ -363,6 +365,9 @@
             }
         }
     }
+    &__item-inner {
+        transition: all .5s;
+    }
     &__item-img {
         margin-bottom: 30px; 
     }
@@ -373,13 +378,18 @@
         color: $text-color;
         @extend %robotocondensed-700
     }
+    &__item-text,
+    &__item-link {
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all .5s;
+    }
     &__item-text {
-        display: none;
         margin-bottom: 17px;
         // @extend %dosis-500;
     }
     &__item-link {
-        display: none;
         letter-spacing: 2px;
         color: $accent;
         @extend %robotocondensed-700;
@@ -462,8 +472,79 @@
             &:hover {
                 padding: 0 25px;
                 .services__item-inner {
-                    padding: 25px 60px 5px;
+                    padding: 35px 60px 5px;
                     min-height: 288px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .services {
+        &__title {
+            margin-bottom: 60px;
+        }
+        &__descr {
+            padding-bottom: 46px;
+            margin-bottom: 40px;
+        }
+        &__text {
+            margin-bottom: 32px;
+            max-width: 608px;
+        }
+        &__item {
+            width: 25%;
+            min-height: 280px;
+            padding: 0 17px;
+            &:nth-child(2),
+            &:nth-child(6) {    
+                border-right: none;
+            }
+            &:hover {
+                padding: 0 17px;
+                .services__item-inner {
+                    padding: 21px 9px 5px;
+                    min-height: 255px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .services {
+        padding: 0;
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 -95px 0 -50px;
+        }
+        &__title {
+            margin: 90px 0 70px;
+            text-align: left;
+        }
+        &__head {
+            max-width: 350px;
+            margin-right: 100px;
+        }
+        &__descr {
+            padding-bottom: 38px;
+            margin-bottom: 40px;
+        }
+        &__items {
+            margin: 0;
+        }
+        &__item {
+            width: 25%;
+            height: 273px;
+            padding: 0 5px;
+            &:hover {
+                padding: 0 5px;
+                .services__item-inner {
+                    margin: 5px 0;
+                    padding: 10px 3px 5px;
+                    min-height: 255px;
                 }
             }
         }

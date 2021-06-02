@@ -417,7 +417,9 @@ body {
       border-bottom: 1px solid #f9f6e5; }
     .services__item:hover .services__item-text,
     .services__item:hover .services__item-link {
-      display: block; }
+      opacity: 1;
+      height: auto;
+      overflow: visible; }
     .services__item:hover .services__item-img {
       margin-bottom: 14px; }
     .services__item:hover .services__item-title {
@@ -427,6 +429,8 @@ body {
       margin: 18px 0;
       padding: 25px 20px 5px;
       min-height: 277px; }
+  .services__item-inner {
+    transition: all .5s; }
   .services__item-img {
     margin-bottom: 30px; }
   .services__item-title {
@@ -434,11 +438,14 @@ body {
     letter-spacing: 2px;
     font-size: 16px;
     color: #4a4a4a; }
+  .services__item-text, .services__item-link {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s; }
   .services__item-text {
-    display: none;
     margin-bottom: 17px; }
   .services__item-link {
-    display: none;
     letter-spacing: 2px;
     color: #2B4074; }
 
@@ -502,6 +509,56 @@ body {
       .services__item:hover {
         padding: 0 25px; }
         .services__item:hover .services__item-inner {
-          padding: 25px 60px 5px;
+          padding: 35px 60px 5px;
           min-height: 288px; } }
+
+@media (min-width: 1024px) {
+  .services__title {
+    margin-bottom: 60px; }
+  .services__descr {
+    padding-bottom: 46px;
+    margin-bottom: 40px; }
+  .services__text {
+    margin-bottom: 32px;
+    max-width: 608px; }
+  .services__item {
+    width: 25%;
+    min-height: 280px;
+    padding: 0 17px; }
+    .services__item:nth-child(2), .services__item:nth-child(6) {
+      border-right: none; }
+    .services__item:hover {
+      padding: 0 17px; }
+      .services__item:hover .services__item-inner {
+        padding: 21px 9px 5px;
+        min-height: 255px; } }
+
+@media (min-width: 1440px) {
+  .services {
+    padding: 0; }
+    .services__inner {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -95px 0 -50px; }
+    .services__title {
+      margin: 90px 0 70px;
+      text-align: left; }
+    .services__head {
+      max-width: 350px;
+      margin-right: 100px; }
+    .services__descr {
+      padding-bottom: 38px;
+      margin-bottom: 40px; }
+    .services__items {
+      margin: 0; }
+    .services__item {
+      width: 25%;
+      height: 273px;
+      padding: 0 5px; }
+      .services__item:hover {
+        padding: 0 5px; }
+        .services__item:hover .services__item-inner {
+          margin: 5px 0;
+          padding: 10px 3px 5px;
+          min-height: 255px; } }
 
