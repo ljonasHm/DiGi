@@ -318,6 +318,7 @@
     padding: 25px 0 40px;
     text-align: center;
     &__title {
+        font-size: 24px;
         margin-bottom: 47px;
         color: $accent;
     }
@@ -548,5 +549,38 @@
                 }
             }
         }
+    }
+}
+
+.project {
+    text-align: center;
+    padding: 20px 0 40px;
+    background: linear-gradient(180deg, #2B4074 0%, rgba(43, 64, 116, 0) 100%);
+    &__title {
+        color: #fff;
+        margin-bottom: 40px;
+        &::after {
+            background-color: #fff;
+        }
+    }
+    &__item-img {
+        min-height: 250px;
+        border-radius: 4px;
+        background-size: cover;
+    }
+    &__item-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($bg-color, 0.83);
+        min-height: 227px;
+    }
+    &__item-link {
+        display: block;
+        padding: 20px 0;
+        letter-spacing: 2px;
+        line-height: 19px;
+        color: $accent;
+        @extend %robotocondensed-700;
     }
 }
